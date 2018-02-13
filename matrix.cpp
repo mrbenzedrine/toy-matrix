@@ -7,7 +7,7 @@ Matrix::Matrix(int ROWS, int COLUMNS, double value):rows(ROWS), columns(COLUMNS)
     }
 
     for(int j = 0; j < ROWS; j++){
-        row_ptrs.push_back(&matrix_data[j * ROWS]);
+        row_ptrs.push_back(&matrix_data[j * COLUMNS]);
     }
 
 }
