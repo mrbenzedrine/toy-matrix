@@ -33,6 +33,14 @@ void Matrix::display(){
 
 const double& Matrix::operator()(int i, int j) const{
 
+    if(i < 1 || i > rows){
+        throw std::out_of_range("Matrix row index is out of range");
+    }
+
+    if(j < 1 || j > columns){
+        throw std::out_of_range("Matrix column index is out of range");
+    }
+
     double *temp_row_ptr;
     temp_row_ptr = row_ptrs[i-1] + (j-1);
 
