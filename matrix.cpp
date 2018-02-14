@@ -30,3 +30,14 @@ void Matrix::display(){
     }
 
 }
+
+const double& Matrix::operator()(int i, int j) const{
+
+    double *temp_row_ptr;
+    temp_row_ptr = row_ptrs[i-1] + (j-1);
+
+    const double& matrix_entry_value = *temp_row_ptr;
+
+    return matrix_entry_value;
+
+}

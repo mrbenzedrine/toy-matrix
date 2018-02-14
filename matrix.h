@@ -8,6 +8,8 @@ class Matrix {
 
         void display();
 
+        const double& operator()(int i, int j) const;
+
     private:
         std::vector<double> matrix_data;
         std::vector<double*> row_ptrs;
