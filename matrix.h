@@ -10,6 +10,7 @@ class Matrix {
         void display();
 
         const double& operator()(int i, int j) const;
+        double& operator()(int i, int j);
 
     private:
         std::vector<double> matrix_data;
