@@ -12,6 +12,8 @@ class Matrix {
         const double& operator()(int i, int j) const;
         double& operator()(int i, int j);
 
+        Matrix& operator*=(double scalar);
+
         friend Matrix operator*(double scalar, const Matrix &rhs);
         friend Matrix operator*(const Matrix &lhs, double scalar);
 

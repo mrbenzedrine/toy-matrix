@@ -84,3 +84,15 @@ Matrix operator*(double scalar, const Matrix &rhs){
 Matrix operator*(const Matrix &lhs, double scalar){
     return scalar * lhs;
 }
+
+Matrix& Matrix::operator*=(double scalar){
+
+    std::vector<double>::iterator iter;
+
+    for(iter = matrix_data.begin(); iter != matrix_data.end(); iter++){
+        *iter *= scalar;
+    }
+
+    return *this;
+
+}
