@@ -68,3 +68,19 @@ double& Matrix::operator()(int i, int j){
     return matrix_entry_value;
 
 }
+
+Matrix operator*(double scalar, const Matrix &rhs){
+
+    Matrix result_matrix(rhs.rows, rhs.columns);
+
+    for(int i = 0; i < rhs.rows * rhs.columns; i++){
+        result_matrix.matrix_data[i] = rhs.matrix_data[i] * scalar;
+    }
+
+    return result_matrix;
+
+}
+
+Matrix operator*(const Matrix &lhs, double scalar){
+    return scalar * lhs;
+}
