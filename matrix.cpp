@@ -12,6 +12,18 @@ Matrix::Matrix(int ROWS, int COLUMNS, double value):rows(ROWS), columns(COLUMNS)
 
 }
 
+Matrix::Matrix(const Matrix &matrix){
+
+    rows = matrix.rows;
+    columns = matrix.columns;
+    matrix_data = matrix.matrix_data;
+
+    for(int i = 0; i < rows; i++){
+        row_ptrs.push_back(&matrix_data[i * columns]);
+    }
+
+}
+
 void Matrix::display(){
 
     std::vector<double*>::const_iterator iter;

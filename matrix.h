@@ -6,6 +6,7 @@ class Matrix {
 
     public:
         Matrix(int ROWS, int COLUMNS, double value = 0.0);
+        Matrix(const Matrix &matrix);
 
         void display();
 
