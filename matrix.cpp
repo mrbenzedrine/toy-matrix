@@ -146,3 +146,19 @@ Matrix& Matrix::operator+=(const Matrix &rhs){
     return *this;
 
 }
+
+Matrix& Matrix::operator=(const Matrix &rhs){
+
+    rows = rhs.rows;
+    columns = rhs.columns;
+    matrix_data = rhs.matrix_data;
+
+    row_ptrs.clear();
+
+    for(int i = 0; i < rows; i++){
+        row_ptrs.push_back(&matrix_data[i * columns]);
+    }
+
+    return *this;
+
+}
