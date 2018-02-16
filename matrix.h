@@ -13,6 +13,7 @@ class Matrix {
         double& operator()(int i, int j);
 
         Matrix& operator*=(double scalar);
+        Matrix& operator+=(const Matrix &rhs);
 
         friend Matrix operator*(double scalar, const Matrix &rhs);
         friend Matrix operator*(const Matrix &lhs, double scalar);

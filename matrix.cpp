@@ -116,3 +116,21 @@ Matrix operator+(const Matrix &lhs, const Matrix &rhs){
     return result_matrix;
 
 }
+
+Matrix& Matrix::operator+=(const Matrix &rhs){
+
+    if(rows != rhs.rows){
+        throw std::logic_error("Incompatible row dimensions of Matrix operands of += operator");
+    }
+
+    if(columns != rhs.columns){
+        throw std::logic_error("Incompatible column dimensions of Matrix operands of += operator");
+    }
+
+    for(int i = 0; i < rows * columns; i++){
+        matrix_data[i] += rhs.matrix_data[i];
+    }
+
+    return *this;
+
+}
