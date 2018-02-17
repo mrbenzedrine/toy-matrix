@@ -119,11 +119,11 @@ Matrix operator+(Matrix lhs, const Matrix &rhs){
 Matrix& Matrix::operator+=(const Matrix &rhs){
 
     if(rows != rhs.rows){
-        throw std::logic_error("Incompatible row dimensions of Matrix operands of += operator");
+        throw std::logic_error("Incompatible row dimensions of Matrix operands");
     }
 
     if(columns != rhs.columns){
-        throw std::logic_error("Incompatible column dimensions of Matrix operands of += operator");
+        throw std::logic_error("Incompatible column dimensions of Matrix operands");
     }
 
     for(int i = 0; i < rows * columns; i++){
