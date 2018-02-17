@@ -109,23 +109,10 @@ Matrix& Matrix::operator*=(double scalar){
 
 }
 
-Matrix operator+(const Matrix &lhs, const Matrix &rhs){
+Matrix operator+(Matrix lhs, const Matrix &rhs){
 
-    if(lhs.rows != rhs.rows){
-        throw std::logic_error("Incompatible row dimensions of Matrix operands of + operator");
-    }
-
-    if(lhs.columns != rhs.columns){
-        throw std::logic_error("Incompatible column dimensions of Matrix operands of + operator");
-    }
-
-    Matrix result_matrix(lhs.rows, lhs.columns);
-
-    for(int i = 0; i < lhs.rows * lhs.columns; i++){
-        result_matrix.matrix_data[i] = lhs.matrix_data[i] + rhs.matrix_data[i];
-    }
-
-    return result_matrix;
+    lhs += rhs;
+    return lhs;
 
 }
 
