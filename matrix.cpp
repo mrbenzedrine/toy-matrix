@@ -83,13 +83,7 @@ double& Matrix::operator()(int i, int j){
 
 Matrix operator*(double scalar, const Matrix &rhs){
 
-    Matrix result_matrix(rhs.rows, rhs.columns);
-
-    for(int i = 0; i < rhs.rows * rhs.columns; i++){
-        result_matrix.matrix_data[i] = rhs.matrix_data[i] * scalar;
-    }
-
-    return result_matrix;
+    return rhs * scalar;
 
 }
 
