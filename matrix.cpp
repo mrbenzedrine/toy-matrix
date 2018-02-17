@@ -93,8 +93,11 @@ Matrix operator*(double scalar, const Matrix &rhs){
 
 }
 
-Matrix operator*(const Matrix &lhs, double scalar){
-    return scalar * lhs;
+Matrix operator*(Matrix lhs, double scalar){
+
+    lhs *= scalar;
+    return lhs;
+
 }
 
 Matrix& Matrix::operator*=(double scalar){
