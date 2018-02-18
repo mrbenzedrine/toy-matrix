@@ -146,3 +146,12 @@ Matrix& Matrix::operator=(const Matrix &rhs){
     return *this;
 
 }
+
+Matrix& Matrix::operator-=(const Matrix &rhs){
+
+    int i = -1;
+    *this += i * rhs;
+
+    return *this;
+
+}
