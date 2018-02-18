@@ -155,3 +155,10 @@ Matrix& Matrix::operator-=(const Matrix &rhs){
     return *this;
 
 }
+
+Matrix operator-(Matrix lhs, const Matrix &rhs){
+
+    lhs -= rhs;
+    return lhs;
+
+}
