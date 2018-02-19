@@ -22,6 +22,7 @@ class Matrix {
         friend Matrix operator*(Matrix lhs, double scalar);
         friend Matrix operator+(Matrix lhs, const Matrix &rhs);
         friend Matrix operator-(Matrix lhs, const Matrix &rhs);
+        friend Matrix operator-(Matrix rhs);
 
     private:
         std::vector<double> matrix_data;

@@ -162,3 +162,9 @@ Matrix operator-(Matrix lhs, const Matrix &rhs){
     return lhs;
 
 }
+
+Matrix operator-(Matrix rhs){
+
+    return rhs * -1;
+
+}
