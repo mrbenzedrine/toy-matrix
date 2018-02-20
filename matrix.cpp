@@ -43,6 +43,20 @@ void Matrix::display(){
 
 }
 
+Matrix Matrix::transpose(){
+
+    Matrix result(columns, rows);
+
+    for(int i = 0; i < columns; i++){
+        for(int j = 0; j < rows; j++){
+            result(i+1, j+1) = (*this)(j+1, i+1);
+        }
+    }
+
+    return result;
+
+}
+
 const double& Matrix::operator()(int i, int j) const{
 
     if(i < 1 || i > rows){

@@ -9,6 +9,7 @@ class Matrix {
         Matrix(const Matrix &matrix);
 
         void display();
+        Matrix transpose();
 
         const double& operator()(int i, int j) const;
         double& operator()(int i, int j);
