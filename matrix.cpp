@@ -182,3 +182,36 @@ Matrix operator-(Matrix rhs){
     return rhs * -1;
 
 }
+
+Matrix operator*(const Matrix &lhs, const Matrix &rhs){
+
+    if(lhs.columns != rhs.rows){
+        throw std::logic_error("Incompatible dimensions of Matrix operands for multiplication");
+    }
+
+    if(lhs.rows != rhs.columns){
+        throw std::logic_error("Incompatible dimensions of Matrix operands for multiplication");
+    }
+
+    Matrix result(lhs.rows, rhs.columns);
+    double *lhs_row_ptr, *rhs_row_ptr;
+
+    for(int i = 0; i < lhs.rows; i++){
+        for(int j = 0; j < rhs.columns; j++){
+
+            lhs_row_ptr = lhs.row_ptrs[i];
+            double sum = 0;
+
+            for(int k = 0; k < lhs.columns; k++, lhs_row_ptr++){
+                rhs_row_ptr = rhs.row_ptrs[k] + j;
+                sum += *lhs_row_ptr * *rhs_row_ptr;
+            }
+
+            result(i + 1, j + 1) = sum;
+
+        }
+    }
+
+    return result;
+
+}
